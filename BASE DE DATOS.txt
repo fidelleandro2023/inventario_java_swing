@@ -1,0 +1,16 @@
+CREATE DATABASE `inventario_productos` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+
+-- inventario_productos.users definition
+
+CREATE TABLE `users` (
+  `id` int NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO inventario_productos.users
+(id, name, username, email, password)
+VALUES(1, 'Juan', 'juan', 'juan@msn.com', '1234');
