@@ -5,8 +5,11 @@
 package inventarioproductos;
 import Models.Menu;
 import Models.Privileges;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 import javax.swing.JButton;
 
@@ -21,11 +24,14 @@ public class menu extends javax.swing.JFrame {
      */
     public menu() {
         initComponents();
-        Menu menu2 = new Menu();
+        Menu menu2 = new Menu(); // text width java swing
         menu2.show(); 
         Privileges privs = new Privileges();
         Integer nlista = privs.ListarPrivilegios().size();
-        
+        Font font1 = new Font("Arial",Font.PLAIN,12);
+        AffineTransform aft = new AffineTransform();
+        FontRenderContext frc = new FontRenderContext(aft,true,true);
+        int size1 = (int)font1.getStringBounds("hOla", frc).getWidth();
         JButton botones[] = new JButton[nlista];
         try{
             for(int i = 0;i<botones.length; i++){
