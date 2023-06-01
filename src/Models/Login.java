@@ -17,6 +17,7 @@ public class Login {
        
        try{
         Conexion cn = new Conexion();
+        System.out.print("SELECT * FROM users WHERE username='"+username+"' AND password='"+password+"'");
         ResultSet resultado = cn.SQL("SELECT * FROM users WHERE username='"+username+"' AND password='"+password+"'");
         if(resultado.next()){
             response = true;
